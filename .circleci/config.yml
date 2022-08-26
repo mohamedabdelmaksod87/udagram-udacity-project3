@@ -13,6 +13,7 @@ jobs:
       - node/install
       - aws-elastic-beanstalk/setup
       - aws-cli/setup
+      - checkout
       # install dependencies in both frontend & backend
       - run:
           name: Front-End Install Dep
