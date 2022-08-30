@@ -43,6 +43,13 @@ build:
           command: |
             npm run backend:install
 
+# run Frontend test script to validate UI Code before build & deploy
+
+      - run:
+          name: Front-End Testing
+          command: |
+            npm run frontend:test
+
 # Build both frontend & backend app versions which will be run on AWS different services
 
       - run:
