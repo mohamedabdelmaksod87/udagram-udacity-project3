@@ -10,8 +10,8 @@ jobs:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
-        environment:
-          CHROME_BIN: /usr/bin/google-chrome-stable
+        # environment:
+        #   CHROME_BIN: /usr/bin/google-chrome-stable
     steps:
       - node/install
       - aws-elastic-beanstalk/setup
