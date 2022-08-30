@@ -23,6 +23,8 @@ build:
 
     docker:
       - image: "cimg/base:stable"
+        environment:
+          CHROME_BIN: /usr/bin/google-chrome
 
 # here we install and prepare our enviroments needed to during the pipeline execution
 
