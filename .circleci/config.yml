@@ -4,7 +4,6 @@ orbs:
   node: circleci/node@5.0.2
   aws-cli: circleci/aws-cli@3.1.1
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
-  browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
     docker:
@@ -14,7 +13,6 @@ jobs:
       - node/install
       - aws-elastic-beanstalk/setup
       - aws-cli/setup
-      - browser-tools/install-browser-tools
       - checkout
       # install dependencies in both frontend & backend
       - run:
@@ -25,13 +23,6 @@ jobs:
           name: Back-End Install Dep
           command: |
             npm run backend:install
-      # run frontend test script
-      - run:
-          name: Front-End Testing
-          command: |
-            npm run frontend:test
-          environment:
-            CHROME_BIN: /usr/bin/google-chrome-stable
       # Build both frontend & backend
       - run:
           name: Front-End Build
@@ -50,3 +41,13 @@ jobs:
           name: Back-End Deploy
           command: |
             npm run backend:deploy
+
+workflows:
+  udagram:
+    jobs:
+      - build
+      - hold:
+          filters:
+            branches:
+              only:
+                - main
