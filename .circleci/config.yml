@@ -16,7 +16,9 @@ jobs:
       - node/install
       - aws-elastic-beanstalk/setup
       - aws-cli/setup
-      - browser-tools/install-browser-tools
+      - browser-tools/install-browser-tools:
+          chrome-version: 85.0.4183.102
+          firefox-version: 80.0.1
       - checkout
       # install dependencies in both frontend & backend
       - run:
