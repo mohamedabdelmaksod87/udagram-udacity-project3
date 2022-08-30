@@ -7,7 +7,7 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: ["./src/**/*.e2e-spec.ts"],
   capabilities: {
-    browserName: "firefox",
+    browserName: "chrome",
   },
   directConnect: true,
   baseUrl: "http://localhost:4200/",
