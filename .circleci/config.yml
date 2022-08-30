@@ -4,6 +4,7 @@ orbs:
   node: circleci/node@5.0.2
   aws-cli: circleci/aws-cli@3.1.1
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
+  browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
     docker:
@@ -13,6 +14,7 @@ jobs:
       - node/install
       - aws-elastic-beanstalk/setup
       - aws-cli/setup
+      - browser-tools/install-browser-tools
       - checkout
       # install dependencies in both frontend & backend
       - run:
