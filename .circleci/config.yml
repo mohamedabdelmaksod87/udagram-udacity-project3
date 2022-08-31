@@ -4,15 +4,15 @@ orbs:
   node: circleci/node@5.0.2
   aws-cli: circleci/aws-cli@3.1.1
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
-  browser-tools: circleci/browser-tools@1.4.0
+  # browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
-        environment:
-          CHROME_BIN: /usr/bin/google-chrome-stable
-          DISPLAY: localhost:10.0
+        # environment:
+        #   CHROME_BIN: /usr/bin/google-chrome-stable
+        #   DISPLAY: localhost:10.0
     steps:
       - node/install
       - aws-elastic-beanstalk/setup
@@ -29,10 +29,10 @@ jobs:
           command: |
             npm run backend:install
       # run frontend UI testing script
-      - run:
-          name: Front-End UI Testing
-          command: |
-            npm run frontend:test
+      # - run:
+      #     name: Front-End UI Testing
+      #     command: |
+      #       npm run frontend:test
       # Build both frontend & backend
       - run:
           name: Front-End Build
