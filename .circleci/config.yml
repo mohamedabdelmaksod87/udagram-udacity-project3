@@ -17,7 +17,7 @@ jobs:
       - node/install
       - aws-elastic-beanstalk/setup
       - aws-cli/setup
-      - browser-tools/install-browser-tools
+      # - browser-tools/install-browser-tools
       - checkout
       # install dependencies in both frontend & backend
       - run:
