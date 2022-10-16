@@ -1,7 +1,3 @@
-# The link to the hosted working Front-End Application:
-
-http://udagram-frontend-app.s3-website-us-east-1.amazonaws.com
-
 ### For more details about the app please check the documents folder which contains the following:
 
 - project infrastructure details.
